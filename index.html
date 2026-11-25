@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stylevia | Everyday Pet Care, Routines and Understanding Your Dog or Cat</title>
+<meta name="description" content="Stylevia is an independent reading space about everyday pet care: daily routines, body language, home safety and gentle habits for happier dogs and cats.">
+
+<!-- Google AdSense / Google Ads script: paste your site code here (inside head) -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cocoa:#43302A;
+  --sky:#4DA8DA;
+  --sky-d:#2E8BBF;
+  --sky-l:#E3F1FA;
+  --white:#FFFFFF;
+  --bg:#F3F8FB;
+  --text:#2E2A28;
+  --muted:#6A625E;
+  --line:#DCE6ED;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',system-ui,sans-serif;background:var(--white);color:var(--text);line-height:1.75;font-size:17.5px;width:100%;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--sky-d)}
+a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(--cocoa);outline-offset:3px}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;line-height:1.14;color:var(--cocoa);letter-spacing:-.015em}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 28px}
+.narrow{max-width:780px}
+
+/* header */
+header{background:var(--white);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--cocoa)}
+.brand span{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.6rem}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.94rem}
+nav a:hover{color:var(--sky-d)}
+
+/* hero: circle cluster */
+.hero{background:var(--sky-l);padding:70px 0 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,5vw,4.2rem);margin-bottom:22px}
+.hero p{color:var(--muted);font-size:1.12rem;max-width:540px;margin-bottom:32px}
+.btn{display:inline-block;background:var(--cocoa);color:#fff;text-decoration:none;padding:15px 30px;border-radius:50px;font-weight:700;transition:background .2s}
+.btn:hover{background:var(--sky-d)}
+.circles{position:relative;height:480px}
+.circles .c{position:absolute;border-radius:50%;overflow:hidden;border:6px solid var(--white);background:#b8d3e4}
+.circles img{width:100%;height:100%;object-fit:cover}
+.c1{width:300px;height:300px;left:0;top:0}
+.c2{width:240px;height:240px;right:0;top:60px}
+.c3{width:230px;height:230px;left:70px;bottom:0}
+.c4{width:150px;height:150px;right:40px;bottom:30px;background:var(--sky)!important}
+
+/* sections */
+section{padding:84px 0}
+.tint{background:var(--bg)}
+.sec-head{max-width:700px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:14px}
+.sec-head p{color:var(--muted)}
+
+/* intro */
+.intro{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+.intro h2{font-size:clamp(2rem,3.4vw,2.7rem)}
+.intro p{margin-bottom:20px;color:var(--muted)}
+
+/* dog vs cat */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.pet{border-radius:var(--radius);overflow:hidden;background:var(--white);border:1px solid var(--line)}
+.pet img{width:100%;height:280px;object-fit:cover;background:#b8d3e4}
+.pet div{padding:30px 32px 34px}
+.pet h3{font-size:1.7rem;margin-bottom:12px}
+.pet p{color:var(--muted);margin-bottom:12px}
+.pet ul{list-style:none;margin-top:14px}
+.pet li{padding:8px 0 8px 26px;position:relative;border-top:1px dashed var(--line);font-size:.98rem;color:var(--text)}
+.pet li::before{content:"";position:absolute;left:2px;top:19px;width:10px;height:10px;border-radius:50%;background:var(--sky)}
+
+/* routine */
+.routine{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.rt{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px}
+.rt .t{display:inline-block;background:var(--sky-l);color:var(--sky-d);font-weight:700;font-size:.85rem;padding:4px 14px;border-radius:30px;margin-bottom:14px}
+.rt h3{font-size:1.25rem;margin-bottom:8px}
+.rt p{color:var(--muted);font-size:.97rem}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split.flip .pic{order:2}
+.pic{border-radius:var(--radius);overflow:hidden;background:#b8d3e4}
+.pic img{width:100%;height:100%;min-height:440px;object-fit:cover}
+.split h2{font-size:clamp(1.9rem,3.2vw,2.6rem);margin-bottom:18px}
+.split p{color:var(--muted);margin-bottom:18px}
+
+/* body language table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+table{width:100%;border-collapse:collapse;min-width:680px}
+th,td{text-align:left;padding:16px 20px;border-bottom:1px solid var(--line);font-size:.97rem;vertical-align:top}
+th{background:var(--cocoa);color:#fff;font-weight:700}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:700;color:var(--cocoa)}
+
+/* safety checklist */
+.safe{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.safe div{padding:20px 0 20px 42px;border-bottom:1px solid var(--line);position:relative}
+.safe div::before{content:"";position:absolute;left:4px;top:30px;width:14px;height:7px;border-left:3px solid var(--sky);border-bottom:3px solid var(--sky);transform:rotate(-45deg)}
+.safe h3{font-size:1.2rem;margin-bottom:4px}
+.safe p{color:var(--muted);font-size:.97rem}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gal figure{margin:0}
+.gal .ph{border-radius:var(--radius);overflow:hidden;background:#b8d3e4}
+.gal img{width:100%;height:250px;object-fit:cover}
+.gal figcaption{font-size:.92rem;color:var(--muted);padding-top:10px}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-weight:700;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:20px;color:var(--cocoa)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--sky-d)}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:14px;color:var(--muted)}
+
+/* ad slots */
+.ad-slot{width:100%;max-width:1200px;margin:0 auto;padding:30px 28px;min-height:120px;text-align:center}
+
+/* disclaimer */
+.disclaimer{background:var(--bg);border:1px solid var(--line);border-left:5px solid var(--sky);border-radius:var(--radius);padding:32px 36px}
+.disclaimer h3{font-size:1.4rem;margin-bottom:12px}
+.disclaimer p{color:var(--muted);font-size:.97rem;margin-bottom:10px}
+
+/* footer */
+footer{background:var(--cocoa);color:#CDBFB8;padding:56px 0 32px}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:32px}
+footer .brand,footer .brand span{color:#fff}
+.foot p{max-width:420px;font-size:.95rem;margin-top:14px}
+.foot ul{list-style:none}
+.foot li{margin-bottom:10px}
+.foot a{color:#fff;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.copy{border-top:1px solid rgba(255,255,255,.16);padding-top:20px;font-size:.88rem}
+
+@media(max-width:960px){
+  nav{display:none}
+  .hero-grid,.intro,.split,.duo{grid-template-columns:1fr;gap:34px}
+  .circles{height:380px}
+  .c1{width:210px;height:210px}
+  .c2{width:170px;height:170px;top:40px}
+  .c3{width:170px;height:170px;left:40px}
+  .c4{width:100px;height:100px}
+  .split.flip .pic{order:0}
+  .routine,.gal,.safe{grid-template-columns:1fr 1fr}
+  .safe{grid-template-columns:1fr}
+  .pic img{min-height:300px}
+  section{padding:58px 0}
+}
+@media(max-width:560px){.routine,.gal{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Stylevia home">
+      <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#43302A"/><ellipse cx="20" cy="25" rx="7" ry="6" fill="#4DA8DA"/><circle cx="11.5" cy="18" r="3" fill="#4DA8DA"/><circle cx="16" cy="12.5" r="3" fill="#4DA8DA"/><circle cx="24" cy="12.5" r="3" fill="#4DA8DA"/><circle cx="28.5" cy="18" r="3" fill="#4DA8DA"/></svg>
+      <span>Stylevia</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#pets">Dogs &amp; cats</a></li>
+        <li><a href="#routine">Daily routine</a></li>
+        <li><a href="#language">Body language</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Happier pets begin with gentle, steady habits.</h1>
+      <p>Stylevia is an independent reading space about everyday pet care. We explain routines, body language and home safety in plain words, so living with a dog or cat feels easier and kinder for everyone.</p>
+      <a class="btn" href="#about">Start reading</a>
+    </div>
+    <div class="circles">
+      <div class="c c1"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80" alt="Friendly dog looking at the camera" loading="eager"></div>
+      <div class="c c2"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=500&q=80" alt="Calm cat with bright eyes" loading="eager"></div>
+      <div class="c c3"><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=500&q=80" alt="Dogs enjoying a walk outdoors" loading="eager"></div>
+      <div class="c c4"></div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section id="about">
+  <div class="wrap intro">
+    <h2>Why Stylevia exists</h2>
+    <div>
+      <p>Bringing a pet home is exciting, but it also brings a stream of everyday questions. How much exercise is enough, why is my cat hiding, what does that tail wag really mean, and how do I make my home safe? Good answers usually come from patience, observation and a little knowledge.</p>
+      <p>Stylevia was created to share that knowledge calmly. Each article focuses on one practical topic, such as building a predictable daily routine, reading body language or spotting everyday hazards around the house.</p>
+      <p>We do not sell pet products or replace the guidance of a veterinarian. Our goal is simply to help you understand your animal a little better, so the bond between you grows stronger over time.</p>
+    </div>
+  </div>
+</section>
+
+<div class="ad-slot">
+  <!-- Google ad unit 1: paste your ad code here -->
+  <!--
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<!-- DOG VS CAT -->
+<section id="pets" class="tint" style="padding-top:60px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Dogs and cats, understood on their own terms</h2>
+      <p>They share a home with us, but each species has its own natural needs and ways of communicating.</p>
+    </div>
+    <div class="duo">
+      <article class="pet">
+        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=900&q=80" alt="Happy dog sitting outdoors" loading="lazy">
+        <div>
+          <h3>Dogs</h3>
+          <p>Dogs are social animals who thrive on routine, company and gentle guidance. They tend to learn best through patience and positive encouragement.</p>
+          <ul>
+            <li>Regular walks and time to sniff and explore</li>
+            <li>Short, calm training sessions using praise</li>
+            <li>Company and not too many long hours alone</li>
+          </ul>
+        </div>
+      </article>
+      <article class="pet">
+        <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=80" alt="Relaxed cat resting indoors" loading="lazy">
+        <div>
+          <h3>Cats</h3>
+          <p>Cats value security and control over their space. Many are independent but still enjoy affection and play when it is offered on their own terms.</p>
+          <ul>
+            <li>Quiet hiding spots and high places to rest</li>
+            <li>Daily play that mimics hunting</li>
+            <li>A clean, easily reachable litter area</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTINE -->
+<section id="routine">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>A calm daily rhythm</h2>
+      <p>Animals feel secure when the day follows a gentle pattern. This is a general example; adjust it to your pet's age, breed, health and your own schedule.</p>
+    </div>
+    <div class="routine">
+      <div class="rt"><span class="t">Morning</span><h3>Fresh start</h3><p>Fresh water, a regular meal, a toilet break or walk and a few minutes of attention before the day begins.</p></div>
+      <div class="rt"><span class="t">Midday</span><h3>Rest and enrichment</h3><p>A safe resting place, a puzzle toy or a window perch. Quiet time helps pets stay relaxed.</p></div>
+      <div class="rt"><span class="t">Afternoon</span><h3>Play and movement</h3><p>Active play, a longer walk or a training game to use energy in a healthy, fun way.</p></div>
+      <div class="rt"><span class="t">Evening</span><h3>Wind down</h3><p>A regular meal, gentle grooming, cuddles if welcome and a calm space to settle for the night.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE 1 -->
+<section class="tint">
+  <div class="wrap split">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=900&q=80" alt="Dog resting beside its owner" loading="lazy"></div>
+    <div>
+      <h2>Why routine matters so much</h2>
+      <p>Pets do not understand our schedules, but they learn patterns quickly. When meals, walks and rest happen at roughly the same times, animals can predict what comes next, and that predictability reduces stress and unwanted behaviour.</p>
+      <p>Changes will sometimes be unavoidable, such as a new job, a house move or a new family member. Introduce changes gradually where possible, keep a few familiar anchors like feeding times and sleeping spots, and give your pet extra patience while they adjust.</p>
+      <p>A steady routine does not need to be rigid. It simply gives your pet a sense of safety, which makes everything else, from training to vet visits, a little easier.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BODY LANGUAGE -->
+<section id="language">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Reading body language</h2>
+      <p>Pets communicate constantly without words. Here are some common signals and what they may suggest. Always consider the whole situation, since meanings can differ between individual animals.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Signal</th><th>Often seen in</th><th>May suggest</th><th>What you can do</th></tr></thead>
+        <tbody>
+          <tr><td>Loose, wagging body</td><td>Dogs</td><td>Relaxed and friendly mood</td><td>Enjoy the moment and offer calm attention</td></tr>
+          <tr><td>Tail tucked, ears back</td><td>Dogs</td><td>Fear or discomfort</td><td>Give space and remove the stress if possible</td></tr>
+          <tr><td>Slow blinking</td><td>Cats</td><td>Comfort and trust</td><td>Blink slowly back</td></tr>
+          <tr><td>Flattened ears, twitching tail</td><td>Cats</td><td>Irritation or stress</td><td>Stop interacting and let them move away</td></tr>
+          <tr><td>Hiding more than usual</td><td>Dogs and cats</td><td>Stress, or possibly feeling unwell</td><td>Keep things calm and contact a vet if it continues</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section class="tint">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Making your home safer for pets</h2>
+      <p>A few simple checks around the house can prevent many everyday accidents.</p>
+    </div>
+    <div class="safe">
+      <div><h3>Store chemicals securely</h3><p>Keep cleaning products, medicines and similar items in closed cupboards well out of reach.</p></div>
+      <div><h3>Know human foods to avoid</h3><p>Some everyday foods are harmful to pets. Check with a vet or reliable source before sharing anything.</p></div>
+      <div><h3>Check plants</h3><p>Some common house and garden plants are toxic to animals. Research each plant before bringing it home.</p></div>
+      <div><h3>Secure windows and balconies</h3><p>Use screens or barriers so curious pets cannot fall or slip out.</p></div>
+      <div><h3>Tidy cables and small objects</h3><p>Chewing on cords or swallowing small items can be dangerous, so keep them out of reach.</p></div>
+      <div><h3>Provide fresh water always</h3><p>Clean, easily accessible water supports daily comfort, especially in warm weather.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE 2 -->
+<section>
+  <div class="wrap split flip">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?auto=format&fit=crop&w=900&q=80" alt="Cat resting peacefully in a sunny spot" loading="lazy"></div>
+    <div>
+      <h2>Building trust, one day at a time</h2>
+      <p>A strong bond with a pet is rarely built through big gestures. It grows through small, consistent moments: feeding on time, speaking softly, respecting their space and paying attention to what they are telling you.</p>
+      <p>Let pets approach you, especially at first. Forcing contact can make animals nervous, while allowing them to come closer builds confidence. Reward calm behaviour with praise, and avoid harsh reactions, which tend to create fear rather than understanding.</p>
+      <p>Regular veterinary check-ups are also part of caring well. A professional can advise on vaccination, nutrition, dental care and anything that looks unusual, giving you reassurance that your companion is healthy and comfortable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="tint">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Everyday companions</h2>
+      <p>Small moments that remind us why we share our homes with animals.</p>
+    </div>
+    <div class="gal">
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=600&q=80" alt="Dog with a curious expression" loading="lazy"></div><figcaption>Curiosity keeps dogs engaged.</figcaption></figure>
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80" alt="Cat with a calm, confident look" loading="lazy"></div><figcaption>Cats show personality in every pose.</figcaption></figure>
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80" alt="Dog resting at home" loading="lazy"></div><figcaption>Rest is as important as play.</figcaption></figure>
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=600&q=80" alt="Dog outdoors in natural light" loading="lazy"></div><figcaption>Time outdoors lifts the spirits.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="ad-slot">
+  <!-- Google ad unit 2: paste your ad code here -->
+  <!--
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap narrow">
+    <div class="sec-head"><h2>Common questions</h2></div>
+    <details>
+      <summary>Is Stylevia a pet shop or veterinary service?</summary>
+      <p>No. Stylevia is an informational website. We do not sell pets, food, toys or accessories, and we do not provide veterinary services. The pages are written only to share general ideas and knowledge about everyday pet care.</p>
+    </details>
+    <details>
+      <summary>How much exercise does my dog need?</summary>
+      <p>It depends on age, breed, size and health. Many dogs benefit from daily walks and some play, while puppies and seniors may need shorter, gentler sessions. Your vet can advise on what suits your dog.</p>
+    </details>
+    <details>
+      <summary>Why does my cat scratch furniture?</summary>
+      <p>Scratching is natural. It stretches muscles, marks territory and keeps claws in condition. Offering sturdy scratching posts in the places your cat already likes can help redirect the habit.</p>
+    </details>
+    <details>
+      <summary>How can I help a nervous pet settle in?</summary>
+      <p>Give them a quiet space, keep routines predictable and let them explore at their own pace. Reward calm behaviour and avoid overwhelming them with visitors or noise while they adjust.</p>
+    </details>
+    <details>
+      <summary>When should I contact a vet?</summary>
+      <p>Whenever you notice a sudden change in appetite, energy, toilet habits or behaviour, or if you are worried about your pet's health. When in doubt, it is always sensible to ask a professional.</p>
+    </details>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section style="padding-top:0">
+  <div class="wrap narrow">
+    <div class="disclaimer" role="note">
+      <h3>Disclaimer</h3>
+      <p>The content on Stylevia is provided for general informational and educational purposes only. It reflects common observations about pet care and behaviour and should not be treated as professional veterinary, medical, nutritional or training advice.</p>
+      <p>Every animal is different. Always consult a qualified veterinarian about your pet's health, diet, medication, vaccinations and any concerning symptoms, and seek urgent veterinary help in an emergency. Images are used for illustration only and do not represent or endorse any specific product, brand, breeder or service.</p>
+      <p>Stylevia does not sell products or services and makes no guarantees about results from applying the ideas shared here. Any decision you make is your own responsibility. Third-party advertising may appear on this site, and we are not responsible for the content of external advertisers.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" aria-label="Stylevia home">
+          <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#4DA8DA"/><ellipse cx="20" cy="25" rx="7" ry="6" fill="#43302A"/><circle cx="11.5" cy="18" r="3" fill="#43302A"/><circle cx="16" cy="12.5" r="3" fill="#43302A"/><circle cx="24" cy="12.5" r="3" fill="#43302A"/><circle cx="28.5" cy="18" r="3" fill="#43302A"/></svg>
+          <span>Stylevia</span>
+        </a>
+        <p>An independent reading space about everyday pet care, routines and understanding your dog or cat.</p>
+      </div>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="copy">&copy; 2026 Stylevia. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
